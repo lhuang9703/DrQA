@@ -6,8 +6,8 @@
 # @Site    : 
 # @File    : add_ideal_answer.py
 # @Software: PyCharm Community Edition
-"""A script to add ideal answer into predict answer,from
-a json format file to a json format file of BioASQ taskB
+"""A script to add ideal answers into predict answers,from
+a json format file to another json format file of BioASQ taskB
 phase B"""
 
 import os
