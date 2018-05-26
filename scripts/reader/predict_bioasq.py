@@ -87,7 +87,7 @@ examples = []
 qids = []
 data = data_from_json(args.dataset)
 for i in tqdm(range(len(data['questions']))):
-    if data['questions'][i]['tyoe'] == 'factoid' or 'list':
+    if data['questions'][i]['type'] == 'factoid' or 'list':
         qid = data['questions'][i]['id']
         question = data['questions'][i]['body']
         try:
