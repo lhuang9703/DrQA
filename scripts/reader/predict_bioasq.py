@@ -116,10 +116,12 @@ for i in tqdm(range(0, len(examples), args.batch_size)):
 
 model = os.path.splitext(os.path.basename(args.model or 'default'))[0]
 basename = os.path.splitext(os.path.basename(args.dataset))[0]
-outfile = os.path.join(args.out_dir, basename + '-' + model + '.preds')
+outfile = os.path.join(args.out_dir, basename + '-' + model + '.json')
 
 logger.info('Writing results to %s' % outfile)
 with open(outfile, 'w') as f:
-    json.dump(results, f)
+    json.dump(results, f, indent=2)
+# with open('outfile', 'w', encoding='utf-8') as f:
+#    f.write(json.dumps(results, ensure_ascii=False, indent=2))
 
 logger.info('Total time: %.2f' % (time.time() - t0))
