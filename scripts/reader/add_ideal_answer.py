@@ -25,11 +25,11 @@ log.addHandler(console)
 parser = argparse.ArgumentParser()
 parser.add_argument('--input_file1', type=str, default=None,
                     help='The file you want to add ideal answer')
-parser.add_argument('--input_file2', type=str, default=None,
+parser.add_argument('--input_file2', type=str, default='BioASQ-trainingDataset6b.json',
                     help='The file with ideal answer')
 parser.add_argument('--out_file', type=str, default='a.json',
                     help='The result file')
-parser.add_argument('--data_dir', type=str, default='../../data',
+parser.add_argument('--data_dir', type=str, default='/home/jiaosd/drqa/data',
                     help='Path to input_file1 and input_file2')
 args = parser.parse_args()
 
@@ -41,7 +41,7 @@ def data_from_json(filename):
 
 
 if __name__ == '__main__':
-    file_a = os.path.join(args.data_dir, args.input_file1)
+    file_a = args.input_file1  # os.path.join(args.data_dir, args.input_file1)
     file_b = os.path.join(args.data_dir, args.input_file2)
 
     data_a = data_from_json(file_a)
